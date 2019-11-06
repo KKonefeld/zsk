@@ -1,0 +1,43 @@
+body{
+  background-color: #4C4B52;
+}
+
+.col-xl-6{
+  margin-top: 15vh;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #85809E;
+  padding: 1vw;
+}
+
+.buttn{
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+#ikony{
+  visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  .col-6{
+    margin-left: 33%;
+
+  }
+  .col-xl-6{
+
+  }
+
+}
+@media (max-width: 1024px) and (min-width: 450px){
+  .container
+  {
+    width: auto;
+  }
+  .col-6{
+    margin-left: 25%;
+
+  }
+  .rowek{
+    text-align: center;
+  }
+}
