@@ -3,13 +3,6 @@ body{
   background-color: #B5D7FF
 }
 
-.col-xl-6{
-  margin-top: 15vh;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #3E57B8;
-  padding: 1vw;
-}
 
 .buttn{
   margin-top: 10%;
@@ -20,16 +13,6 @@ body{
 .buttn:hover{
   background-color: #3E57B8;
 }
-.ziel{
-  background-color: #6EB825;
-  border-color: black;
-}
-.ziel:hover{
-  background-color: #1D37B8;
-}
-label, h1{
-  color: antiquewhite;
-}
 #ikony{
   visibility: hidden;
 }
@@ -39,9 +22,7 @@ label, h1{
     margin-left: 33%;
 
   }
-  .col-xl-6{
 
-  }
 
 }
 @media (max-width: 1024px) and (min-width: 450px){
@@ -56,4 +37,17 @@ label, h1{
   .rowek{
     text-align: center;
   }
+}
+.kurs, .fiszka{
+  margin-top: 15vh;
+  background-color: #3E57B8;
+  border: 1px solid black;
+  padding-bottom: 1vh;
+  color: antiquewhite;
+}
+.fiszka{
+
+}
+.wyborkursu{
+  border-bottom: 2px solid #FF8259;
 }
