@@ -31,9 +31,9 @@
     </div>
 
     <div class="col-4 col-xl-3">
-      <button type="button" class="buttn btn btn-primary" >
+    <a href="home.php">  <button type="button" class="buttn btn btn-primary" >
         <img src="grafika/home.png" alt="Home">
-      </button>
+      </button> </a>
     </div>
     <div class="col-4 col-xl-3">
       <a href="logowanie.php">  <button type="button" class="buttn btn btn-primary"><img src="grafika/login.png" alt="Logowanie"></button></a>
@@ -55,7 +55,7 @@
     <label for="haslopowt">Powtorz haslo</label>
     <input type="password" id="haslopowt" class="form-control" name="" value="" placeholder="login">
     <br>
-    <input class="btn btn-primary" type="submit" value="Zarejestruj">
+    <input class="btn btn-primary ziel" type="submit" value="Zarejestruj">
     <br>
     </div>
 
