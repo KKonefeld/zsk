@@ -40,7 +40,7 @@ body{
 }
 .kurs, .fiszka{
   margin-top: 15vh;
-  background-color: #3E57B8;
+/*  background-color: #3E57B8; */
   border: 1px solid black;
   padding-bottom: 1vh;
   color: antiquewhite;
