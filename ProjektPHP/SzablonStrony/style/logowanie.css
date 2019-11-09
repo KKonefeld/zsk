@@ -1,7 +1,3 @@
-body{
-  /* background-color: #4C4B52; */
-  background-color: #B5D7FF
-}
 
 .col-xl-6{
   margin-top: 15vh;
@@ -11,15 +7,6 @@ body{
   padding: 1vw;
 }
 
-.buttn{
-  margin-top: 10%;
-  margin-bottom: 5%;
-  background-color: #6EB825;
-  border-color: black;
-}
-.buttn:hover{
-  background-color: #3E57B8;
-}
 .ziel{
   background-color: #6EB825;
   border-color: black;
@@ -29,31 +16,4 @@ body{
 }
 label, h1{
   color: antiquewhite;
-}
-#ikony{
-  visibility: hidden;
-}
-
-@media (max-width: 767px) {
-  .col-6{
-    margin-left: 33%;
-
-  }
-  .col-xl-6{
-
-  }
-
-}
-@media (max-width: 1024px) and (min-width: 450px){
-  .container
-  {
-    width: auto;
-  }
-  .col-6{
-    margin-left: 25%;
-
-  }
-  .rowek{
-    text-align: center;
-  }
 }

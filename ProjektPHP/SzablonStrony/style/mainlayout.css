@@ -1,0 +1,38 @@
+body{
+  /* background-color: #4C4B52; */
+  background-color: #B5D7FF
+}
+.przyciskimenu{
+  margin-top: 10%;
+  margin-bottom: 5%;
+  background-color: #6EB825;
+  border-color: black;
+}
+.przyciskimenu:hover{
+  background-color: #3E57B8;
+}
+#ikony{
+  visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  .col-6{
+    margin-left: 33%;
+
+  }
+
+
+}
+@media (max-width: 1024px) and (min-width: 450px){
+  .container
+  {
+    width: auto;
+  }
+  .col-6{
+    margin-left: 25%;
+
+  }
+  .rowek{
+    text-align: center;
+  }
+}

@@ -1,43 +1,7 @@
-body{
-  /* background-color: #4C4B52; */
-  background-color: #B5D7FF
-}
 
+/* stylizacja tylko dla home */
 
-.buttn{
-  margin-top: 10%;
-  margin-bottom: 5%;
-  background-color: #6EB825;
-  border-color: black;
-}
-.buttn:hover{
-  background-color: #3E57B8;
-}
-#ikony{
-  visibility: hidden;
-}
-
-@media (max-width: 767px) {
-  .col-6{
-    margin-left: 33%;
-
-  }
-
-
-}
-@media (max-width: 1024px) and (min-width: 450px){
-  .container
-  {
-    width: auto;
-  }
-  .col-6{
-    margin-left: 25%;
-
-  }
-  .rowek{
-    text-align: center;
-  }
-}
+/* prawa strona */
 .kurs, .fiszka{
   margin-top: 15vh;
   background-color: #3E57B8;
@@ -45,9 +9,20 @@ body{
   padding-bottom: 1vh;
   color: antiquewhite;
 }
-.fiszka{
-
-}
+/* menu po lewej */
 .wyborkursu{
+  border-bottom: 2px solid #FF8259;
+}
+.navbar-brand{
+  color: antiquewhite;
+}
+.nav-link{
+  color: antiquewhite;
+  border-bottom: 2px solid #3E57B8;
+}
+.nav-link:hover, .navbar-brand:hover{
+  color : #6EB825;
+}
+.nav-link:hover{
   border-bottom: 2px solid #FF8259;
 }
