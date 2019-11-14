@@ -14,13 +14,18 @@ body{
 #ikony{
   visibility: hidden;
 }
+.przerywnik{
+  height: 15vh;
+}
 
 @media (max-width: 767px) {
   .col-6{
     margin-left: 33%;
 
   }
-
+  .przerywnik{
+    height: 1vh;
+  }
 
 }
 @media (max-width: 1024px) and (min-width: 450px){
@@ -32,6 +37,7 @@ body{
     margin-left: 25%;
 
   }
+
   .rowek{
     text-align: center;
   }

@@ -2,14 +2,22 @@
 /* stylizacja tylko dla home */
 
 /* prawa strona */
-.kurs, .fiszka{
+.kursmenu, .fiszka{
   margin-top: 15vh;
 /*  background-color: #3E57B8; */
   border: 1px solid black;
   padding-bottom: 1vh;
   color: antiquewhite;
 }
+
+.fiszka{
+  height: 45vh;
+  background-color: #3E57B8;
+}
 /* menu po lewej */
+.kursmenu{
+  border: 0;
+}
 .wyborkursu{
   border-bottom: 2px solid #FF8259;
 }
@@ -25,4 +33,7 @@
 }
 .nav-link:hover{
   border-bottom: 2px solid #FF8259;
+}
+.wyborkursu{
+  background-color: #3E57B8;
 }

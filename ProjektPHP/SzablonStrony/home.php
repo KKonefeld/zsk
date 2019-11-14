@@ -41,10 +41,10 @@
 
       </div>
   <div class="row">
-      <div class="col-12 col-xl-4 kurs rounded">
+      <div class="kursmenu col-12 col-xl-4  rounded">
 
         <!-- inicjacja hamburger menu -->
-        <nav class="navbar wyborkursu">
+        <nav class="navbar wyborkursu rounded">
 
           <!-- Tytul listy rozwijanej -->
           <a class="navbar-brand" href="#">E12</a>
@@ -71,7 +71,7 @@
           </div>
         </nav>
         <!-- inicjacja hamburger menu -->
-        <nav class="navbar wyborkursu">
+        <nav class="navbar wyborkursu rounded">
 
           <!-- Tytul listy rozwijanej -->
           <a class="navbar-brand" href="#">E13</a>
@@ -98,7 +98,7 @@
           </div>
         </nav>
         <!-- inicjacja hamburger menu -->
-        <nav class="navbar wyborkursu">
+        <nav class="navbar wyborkursu rounded">
 
           <!-- Tytul listy rozwijanej -->
           <a class="navbar-brand" href="#">E14</a>
@@ -127,9 +127,11 @@
 
 
       </div>
+
       <div class="col-0 col-xl-2">
 
       </div>
+
       <div class="col-12 col-xl-6 fiszka rounded">
         fiszka
       </div>
@@ -137,11 +139,24 @@
 
 
   </div>
+<div class="row">
+    <div class="col-12 col-xl-12 przerywnik"></div>
+</div>
 
 </div>
 <div id="ikony">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
 
 
+<!-- Footer -->
+<footer class="page-footer">
 
+  <!-- Copyright -->
+  <div class="footer text-center py-3">© 2018 Copyright:
+    <a href="https://www.youtube.com/watch?v=aTQDfpeqikM"> Pan Maruda</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
   </body>
 </html>
