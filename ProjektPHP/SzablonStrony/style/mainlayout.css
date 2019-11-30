@@ -1,6 +1,10 @@
 body{
   /* background-color: #4C4B52; */
-  background-color: #B5D7FF
+  background-color: #B5D7FF;
+  height: 100vh;
+}
+html{
+  height: 100vh;
 }
 .przyciskimenu{
   margin-top: 10%;
@@ -17,14 +21,23 @@ body{
 .przerywnik{
   height: 15vh;
 }
-
+#ukrytenapc{
+  border-color: #B5D7FF;
+}
 @media (max-width: 767px) {
   .col-6{
     margin-left: 33%;
 
   }
   .przerywnik{
-    height: 1vh;
+    height: 10vh;
+  }
+  .page-footer{
+    position: static;
+
+  }
+  #ukrytenapc{
+    border-color: #FF8259;
   }
 
 }
@@ -41,4 +54,18 @@ body{
   .rowek{
     text-align: center;
   }
+}
+.page-footer{
+  background-color: #6EB825;
+  font-size: 10px;
+  color: antiquewhite;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+hr{
+  border-color: #FF8259;
+
 }

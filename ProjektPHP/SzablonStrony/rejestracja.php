@@ -24,7 +24,7 @@
 
 
     <div class="container ">
-      <div class="row rowek sticky-top">
+      <div class="row rowek static-top">
         <div class="col-6 col-xl-3">
           <button type="button" class="przyciskimenu btn btn-primary" >
             <img src="grafika/logo.png" alt="Logo">
@@ -45,6 +45,7 @@
 
 
       </div>
+      <hr id="ukrytenapc">
   <div class="row">
     <div class="col-xl-6 col-11 rounded">
     <h1>Zarejestruj się!</h1>
@@ -61,9 +62,22 @@
     </div>
 
   </div>
-
+  <div class="row">
+      <div class="col-12 col-xl-12 przerywnik"></div>
+  </div>
 </div>
 <div id="ikony">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+<!-- stopka -->
+<footer class="page-footer">
 
+  <!-- zawartosc -->
+  <div class="footer text-center py-3">Kamil Konefeld 4C
+    <br> kamiskon@gmail.com
+  </div>
+
+
+
+</footer>
+<!-- KONIEC STOPki -->
   </body>
 </html>

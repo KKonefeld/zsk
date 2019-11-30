@@ -3,16 +3,22 @@
 
 /* prawa strona */
 .kursmenu, .fiszka{
-  margin-top: 15vh;
+  margin-top: 10vh;
 /*  background-color: #3E57B8; */
   border: 1px solid black;
   padding-bottom: 1vh;
   color: antiquewhite;
-}
+  z-index: 55;
 
+}
+.container{
+  z-index: 54;
+    background-color: #B5D7FF;
+}
 .fiszka{
   height: 45vh;
   background-color: #3E57B8;
+
 }
 /* menu po lewej */
 .kursmenu{
@@ -36,4 +42,20 @@
 }
 .wyborkursu{
   background-color: #3E57B8;
+}
+.page-footer{
+  z-index: 6;
+}
+.naglowek{
+  color: antiquewhite;
+  font-size: x-large;
+}
+.niewiem{
+  background-color: red;
+  margin-top: 2%;
+  margin-left: 0%;
+}
+.sprawdz{
+  background-color: #6EB825;
+  margin-top: 2%;
 }

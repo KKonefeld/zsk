@@ -19,7 +19,7 @@
   <body>
     <div class="container ">
       <!-- menu glowne -->
-      <div class="row rowek sticky-top">
+      <div class="row rowek static-top">
         <div class="col-6 col-xl-3">
           <button type="button" class="przyciskimenu btn btn-primary" >
             <img src="grafika/logo.png" alt="Logo">
@@ -40,6 +40,7 @@
 
 
       </div>
+      <hr id="ukrytenapc">
   <div class="row">
       <div class="kursmenu col-12 col-xl-4  rounded">
 
@@ -133,7 +134,16 @@
       </div>
 
       <div class="col-12 col-xl-6 fiszka rounded">
-        fiszka
+
+          <p class="text-center naglowek">Wybrano kurs : </p>
+          <hr>
+          <p class="text-left">Jeżozwierz</p>
+          <p class="text-left">/wymowa/</p>
+          <label for="slowko">Podaj tłumaczenie</label>
+          <input type="text" id="slowko " class="form-control" name="" value="" >
+          <button type="button" class="niewiem btn">Nie wiem</button>
+          <button type="button" class="sprawdz btn">Sprawdz</button>
+
       </div>
 
 
@@ -146,17 +156,18 @@
 </div>
 <div id="ikony">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
 
+<!-- stopka -->
+<footer class="page-footer ">
 
-<!-- Footer -->
-<footer class="page-footer">
-
-  <!-- Copyright -->
-  <div class="footer text-center py-3">© 2018 Copyright:
-    <a href="https://www.youtube.com/watch?v=aTQDfpeqikM"> Pan Maruda</a>
+  <!-- zawartosc -->
+  <div class="footer text-center py-3">Kamil Konefeld 4C
+    <br> kamiskon@gmail.com
   </div>
-  <!-- Copyright -->
+
+
 
 </footer>
-<!-- Footer -->
+<!-- KONIEC STOPki -->
+
   </body>
 </html>
