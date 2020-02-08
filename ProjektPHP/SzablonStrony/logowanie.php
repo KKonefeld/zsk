@@ -1,4 +1,10 @@
 <!doctype html>
+<?php
+session_start();
+if (isset($_SESSION['login'])) {
+  header('Location:  home.php');
+}
+ ?>
 <html lang="pl">
   <head>
     <!-- Required meta tags -->
@@ -14,6 +20,9 @@
     <link rel="stylesheet" href="style/logowanie.css">
     <link rel="stylesheet" href="style/mainlayout.css">
     <title>Quizletor</title>
+
+
+
   </head>
   <body>
 
@@ -44,15 +53,33 @@
   <hr id="ukrytenapc">
   <div class="row">
     <div class="col-xl-6 col-11 rounded">
-    <h1>Zaloguj się!</h1>
+    <h1>
+      <?php
+          if (!isset($_SESSION['blad'])) {
+            echo "Zaloguj się!";
+          }else{
+            echo  $_SESSION['blad'];
+            unset($_SESSION['blad']);
+          }
+
+       ?>
+    </h1>
+          <form class="" action="php/logowanie.php" method="post">
+
 
     <label for="email">Podaj e-mail</label>
-    <input type="email" id="email" class="form-control" name="" value="" placeholder="login">
+    <input type="email" id="email" class="form-control" name="login" value="" placeholder="login">
+
     <label for="haslo">Podaj haslo</label>
-    <input type="password" id="haslo" class="form-control" name="" value="" placeholder="login">
+    <input type="password" id="haslo" class="form-control" name="haslo" value="" placeholder="haslo">
     <br>
+
     <input class="btn btn-primary" type="submit" value="Zaloguj">
+
     <br>
+
+          </form>
+
     </div>
 
   </div>

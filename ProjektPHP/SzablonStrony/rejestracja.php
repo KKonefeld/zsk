@@ -1,6 +1,12 @@
 <!doctype html>
+<?php
+session_start();
+
+ ?>
+
 <html lang="pl">
   <head>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,18 +52,63 @@
 
       </div>
       <hr id="ukrytenapc">
+
+
+
   <div class="row">
     <div class="col-xl-6 col-11 rounded">
-    <h1>Zarejestruj się!</h1>
+    <h1><?php if (isset($_SESSION['udana'])) {
+      echo $_SESSION['udana'];
+      unset($_SESSION['udana']);
+      header("refresh:2;url=logowanie.php");
+    }else {
+      echo "Zarejestruj się";
+    } ?></h1>
+      <form class="" action="php/rejestracja.php" method="post">
 
-    <label for="email">Podaj e-mail</label>
-    <input type="email" id="email" class="form-control" name="" value="" placeholder="login">
-    <label for="haslo">Podaj haslo</label>
-    <input type="password" id="haslo" class="form-control" name="" value="" placeholder="login">
-    <label for="haslopowt">Powtorz haslo</label>
-    <input type="password" id="haslopowt" class="form-control" name="" value="" placeholder="login">
+
+
+    <label for="email"><?php if (isset($_SESSION['blademail'])) {
+      echo $_SESSION['blademail'];
+      unset($_SESSION['blademail']);
+    }else {
+      echo "Podaj email";
+    } ?></label>
+    <input type="email" id="email" class="form-control" name="login" value="" placeholder="email">
+    <label for="haslo"><?php if (isset($_SESSION['bladhaslad'])) {
+      echo $_SESSION['bladhaslad'];
+      unset($_SESSION['bladhaslad']);
+    }else {
+      echo "Podaj haslo";
+    } ?></label>
+    <input type="password" id="haslo" class="form-control" name="haslo" value="" placeholder="haslo">
+    <label for="haslopowt"><?php if (isset($_SESSION['bladhasla'])) {
+      echo $_SESSION['bladhasla'];
+      unset($_SESSION['bladhasla']);
+    }else {
+      echo "Powtórz hasło";
+    } ?></label>
+    <input type="password" id="haslopowt" class="form-control" name="haslopowt" value="" placeholder="powtorzhaslo">
+<br>
+    <div class="custom-control custom-checkbox mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlAutosizing" name="regulamin">
+        <label class="custom-control-label" for="customControlAutosizing"><?php if (isset($_SESSION['bladregulamin'])) {
+          echo $_SESSION['bladregulamin'];
+          unset($_SESSION['bladregulamin']);
+        }else {
+          echo "Akceptuję regulamin";
+        } ?></label>
+    </div>
+    <br>
+    <label for="captacha"><?php if (isset($_SESSION['bladcaptacha'])) {
+      echo $_SESSION['bladcaptacha'];
+      unset($_SESSION['bladcaptacha']);
+    }?></label>
+    <div id="captacha" class="g-recaptcha" data-sitekey="6LfrGdYUAAAAAIKzTtYMpzKB8OKnCo26MSenw9Qe"></div>
     <br>
     <input class="btn btn-primary ziel" type="submit" value="Zarejestruj">
+
+        </form>
     <br>
     </div>
 

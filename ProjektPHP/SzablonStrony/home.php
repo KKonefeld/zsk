@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['login'])) {
+  header('Location:  logowanie.php');
+}
+ ?>
+
 <!doctype html>
 <html lang="pl">
   <head>
@@ -41,6 +49,28 @@
 
       </div>
       <hr id="ukrytenapc">
+<!-- panel usera -->
+      <div class="row">
+        <div class="col-12 col-xl-6 rounded panel"> </div>
+        <div class="col-12 col-xl-6 rounded panel">
+          <p class="text-center powitanie rounded">Witaj :   <?php
+            if ($_SESSION['uprawnienia']==1) {
+                echo $_SESSION['login']."(A)";
+            }else {
+            echo $_SESSION['login']."(U)";
+            }
+
+
+
+            ?>
+
+            <a href="php/logout.php" class="wyloguj">
+              <span class="">&#128273; Wyloguj się!</span>
+            </a>
+          </p>
+        </div>
+      </div>
+
   <div class="row">
       <div class="kursmenu col-12 col-xl-4  rounded">
 
@@ -134,6 +164,7 @@
       </div>
 
       <div class="col-12 col-xl-6 fiszka rounded">
+
 
           <p class="text-center naglowek">Wybrano kurs : </p>
           <hr>

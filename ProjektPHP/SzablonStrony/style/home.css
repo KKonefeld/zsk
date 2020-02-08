@@ -50,6 +50,10 @@
   color: antiquewhite;
   font-size: x-large;
 }
+.powitanie{
+  color: antiquewhite;
+  background-color: #3E57B8;
+}
 .niewiem{
   background-color: red;
   margin-top: 2%;
@@ -58,4 +62,10 @@
 .sprawdz{
   background-color: #6EB825;
   margin-top: 2%;
+}
+.wyloguj{
+  color: red;
+}
+.wyloguj:hover{
+  color: red;
 }
