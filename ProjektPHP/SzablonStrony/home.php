@@ -51,11 +51,12 @@ if (!isset($_SESSION['login'])) {
       <hr id="ukrytenapc">
 <!-- panel usera -->
       <div class="row">
+
         <div class="col-12 col-xl-6 rounded panel"> </div>
         <div class="col-12 col-xl-6 rounded panel">
           <p class="text-center powitanie rounded">Witaj :   <?php
             if ($_SESSION['uprawnienia']==1) {
-                echo $_SESSION['login']."(A)";
+                echo $_SESSION['login']."<a href='paneladm.php'>(A)</a>";
             }else {
             echo $_SESSION['login']."(U)";
             }

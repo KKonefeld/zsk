@@ -100,7 +100,7 @@
       } catch (Exception $e)
         {
           echo "Wystąpił błąd! Skontaktuj się z administratorem";
-          echo $e;
+        
         }
 
 

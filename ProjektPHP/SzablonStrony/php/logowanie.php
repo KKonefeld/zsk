@@ -17,7 +17,7 @@
 
     //  $sql = "SELECT * FROM `uzytkownik` WHERE login='$login' && haslo='$password'";
 
-      if ($result = @$connect->query(sprintf("SELECT * FROM `uzytkownik` WHERE login='%s'",
+      if ($result = mysqli_query($connect, sprintf("SELECT * FROM `uzytkownik` WHERE login='%s'",
       mysqli_real_escape_string($connect,$login)
       ))) {
 //$2y$10$gmsPmXsSc9K3lGdfSvzbmucAXtD84s1JwpIZKtoaIlvfZbVFmpaLK
