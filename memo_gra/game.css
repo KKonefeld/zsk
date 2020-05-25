@@ -1,0 +1,40 @@
+body{
+  background-color: #38383d;
+}
+.statyczne{
+  margin: 5px;
+  height: 150px;
+  width: 150px;
+  float: left;
+
+}
+.karta{
+  height: 150px;
+  width: 150px;
+  background-image: url("malik/tijara.jpg");
+   background-size: 150px 150px;
+   border: 4px solid #b540bd;
+
+   filter: brightness(60%);
+   transition: all 0.25s ease-in-out;
+
+}
+.karta:hover{
+
+  border: 4px solid #bd9b40;
+  filter: brightness(90%);
+}
+.odkryta{
+  border: 4px solid #bd9b40;
+  filter: brightness(90%);
+
+}
+
+.rzad{
+  clear: both;
+
+}
+
+.reset{
+  float: right;
+}

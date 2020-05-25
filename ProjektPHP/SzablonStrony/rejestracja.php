@@ -122,7 +122,7 @@ session_start();
 <footer class="page-footer">
 
   <!-- zawartosc -->
-  <div class="footer text-center py-3">Kamil Konefeld 4C
+  <div class="footer text-center py-3">Kamil Konefeld 4C © 2019-2020
     <br> kamiskon@gmail.com
   </div>
 

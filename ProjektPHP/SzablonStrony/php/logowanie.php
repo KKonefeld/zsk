@@ -30,6 +30,8 @@
 
               $_SESSION['login'] = $row['login'];
               $_SESSION['uprawnienia'] = $row['czy_administrator'];
+
+              $_SESSION['id_uzytkownik'] = $row['id_uzytkownik'];
               header('Location: ../home.php');
 
 

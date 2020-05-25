@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .napis{
+        width: 150px;
+        display: inline-block;
+        border: 2px red dashed;
+        background-color: yellow;
+
+      }
+      .marked{
+        color: red;
+        display: block;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <p class="napis">COS</p>
+    <p class="napis">COS</p>
+    <p class="napis">cos</p>
+
+    <button  id="btn">zmiana</button>
+
+    <script type="text/javascript">
+    var txt = document.querySelectorAll('.napis');
+    for( let i in txt)
+  //  for(var i =0; i<txt.length;i++)
+    {
+      btn.addEventListener("click",function (){
+        txt[i].classList.toggle("marked");
+
+      })
+
+
+    }
+
+
+    </script>
+
+  </body>
+</html>

@@ -3,7 +3,9 @@ session_start();
 
 if (!isset($_SESSION['login'])) {
   header('Location:  logowanie.php');
+
 }
+
  ?>
 
 <!doctype html>
@@ -19,10 +21,18 @@ if (!isset($_SESSION['login'])) {
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <link rel="stylesheet" href="style/home.css">
       <link rel="stylesheet" href="style/mainlayout.css">
     <title>Quizletor</title>
+
+    <script>
+    $(document).ready(function(){
+      $('[data-toggle="popover"]').popover();
+    });
+    </script>
+
+
   </head>
   <body>
     <div class="container ">
@@ -68,6 +78,12 @@ if (!isset($_SESSION['login'])) {
             <a href="php/logout.php" class="wyloguj">
               <span class="">&#128273; Wyloguj się!</span>
             </a>
+            <!--  <label for="exampleFormControlSelect1">Wybierz język nauki</label>
+          <select class="form-control-sm rounded" id="exampleFormControlSelect1">
+              <option>Angielski</option>
+              <option>Hiszpanski</option>
+            </select> -->
+
           </p>
         </div>
       </div>
@@ -90,13 +106,13 @@ if (!isset($_SESSION['login'])) {
             <!-- Podlinki -->
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Linux</a>
+                <a class="nav-link" href="obslugaslowek/wybordzialu.php?dzial=Linux">Linux</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Windows</a>
+                <a class="nav-link" href="obslugaslowek/wybordzialu.php?dzial=Windows">Windows</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">UTK</a>
+                <a class="nav-link" href="obslugaslowek/wybordzialu.php?dzial=UTK">UTK</a>
               </li>
             </ul>
             <!-- Tu sie koncza podlinki -->
@@ -117,13 +133,13 @@ if (!isset($_SESSION['login'])) {
             <!-- Podlinki -->
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">Sieci</a>
+                <a class="nav-link"  href="obslugaslowek/wybordzialu.php?dzial=Sieci">Sieci</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Urzadzenia</a>
+                <a class="nav-link"  href="obslugaslowek/wybordzialu.php?dzial=Urzadzenia">Urzadzenia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Protokoly</a>
+                <a class="nav-link" href="obslugaslowek/wybordzialu.php?dzial=Protokoly">Protokoly</a>
               </li>
             </ul>
             <!-- Tu sie koncza podlinki -->
@@ -144,13 +160,13 @@ if (!isset($_SESSION['login'])) {
             <!-- Podlinki -->
             <ul class="navbar-nav mr-auto">
               <li class="nav-item">
-                <a class="nav-link" href="#">PHP</a>
+                <a class="nav-link" href="obslugaslowek/wybordzialu.php?dzial=PHP">PHP</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">WebDesign</a>
+                <a class="nav-link" href="obslugaslowek/wybordzialu.php?dzial=WebDesign">WebDesign</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">BazyDanych</a>
+                <a class="nav-link" href="obslugaslowek/wybordzialu.php?dzial=BazyDanych">BazyDanych</a>
               </li>
             </ul>
             <!-- Tu sie koncza podlinki -->
@@ -167,14 +183,77 @@ if (!isset($_SESSION['login'])) {
       <div class="col-12 col-xl-6 fiszka rounded">
 
 
-          <p class="text-center naglowek">Wybrano kurs : </p>
+
+          <p class="text-center naglowek"><?php if (isset($_GET['nazwa_kursu'])) { $_SESSION['nazwa_kursu'] = $_GET['nazwa_kursu']; $_SESSION['nazwa_dzialu'] = $_GET['nazwa_dzialu'];
+            echo "Wybrano kurs :".$_GET['nazwa_kursu']."/".$_GET['nazwa_dzialu'];
+
+          }else {
+            echo "Nie wybrano kursu";
+          }
+          if (isset($_SESSION['umiesz wszystkie']) &&   $_SESSION['umiesz wszystkie'] = 1) {
+            echo '<p class="text-center text-danger bg-dark rounded"  >Umiesz wszystkie slowka! z działu '.$_GET['nazwa_dzialu'].'</p>';
+          }
+           ?></p>
           <hr>
-          <p class="text-left">Jeżozwierz</p>
-          <p class="text-left">/wymowa/</p>
+          <?php if (isset($_GET['nazwadzialku'])){
+          echo "twoja stara";
+        }
+          ?>
+          <?php
+            if (isset($_GET['id_dzial']) && !isset($_SESSION['ktore_slowo']))
+            {
+
+            $id_dzial = $_GET['id_dzial'];
+            $_SESSION['iddzial'] = $id_dzial;
+            require_once 'php/polaczenie.php';
+            $connect = mysqli_connect($host, $db_user, $db_password, $db_name);
+            $sql = "SELECT `slowo`.`id_slowo`, `slowo`.`slowo`, `tlumaczenie`.`tlumaczenie`, `tlumaczenie`.`id_tlumaczenia` FROM `slowo` inner join `tlumaczenie` on `tlumaczenie`.`id_slowo`= `slowo`.`id_slowo` WHERE `id_dzial` like $id_dzial ";
+            $result =  mysqli_query($connect,$sql);
+            $_SESSION['tablica_slow'] = array();
+
+            while ($row = mysqli_fetch_assoc($result)){
+
+              array_push($_SESSION['tablica_slow'],$row);
+            }
+             $_SESSION['ktore_slowo']=0;
+            //print_r($_SESSION['tablica_slow']);
+            }
+           ?>
+
+          <p class="text-left"><?php
+          error_reporting(0);
+          if (isset($_SESSION['tablica_slow'])) {
+            echo $_SESSION['tablica_slow'][$_SESSION['ktore_slowo']]['slowo'];
+          }else {
+            echo "Mamy aktualnie problemy! Wróć później!";
+          } ?></p>
+
+          <form class="" action="obslugaslowek/sprawdzslowko.php" method="post">
+
+          <p class="text-left text-danger"><?php try {
+
+
+          if (isset($_GET['bledne'])) {
+            echo "Podales bledne tlumaczenie, postaraj sie   ";
+            echo '<button type="button" class="btn btn-warning btn-sm" data-toggle="popover" title="Tlumaczenie" data-content="'.$_SESSION['tablica_slow'][$_SESSION['ktore_slowo']]['tlumaczenie'].'"> Podpowiedz</button>';
+
+          } if (isset($_GET['poprawnetlumaczenie'])) {
+            echo $_SESSION['tablica_slow'][$_SESSION['ktore_slowo']]['tlumaczenie'];
+            echo $_SESSION['ktore_slowo'];
+          }
+
+        } catch(Exception $e){
+          echo "Mamy aktualnie problemy! Wróć później!";
+        }?>
+
+        </p>
           <label for="slowko">Podaj tłumaczenie</label>
-          <input type="text" id="slowko " class="form-control" name="" value="" >
-          <button type="button" class="niewiem btn">Nie wiem</button>
-          <button type="button" class="sprawdz btn">Sprawdz</button>
+          <input type="text" id="slowko " class="form-control" name="tlumaczenie_uzytkownika" value="" >
+
+
+            <input type="submit" class="sprawdz btn" value="Przeslij">
+          </form>
+
 
       </div>
 
@@ -192,7 +271,7 @@ if (!isset($_SESSION['login'])) {
 <footer class="page-footer ">
 
   <!-- zawartosc -->
-  <div class="footer text-center py-3">Kamil Konefeld 4C
+  <div class="footer text-center py-3">Kamil Konefeld 4C © 2019-2020
     <br> kamiskon@gmail.com
   </div>
 

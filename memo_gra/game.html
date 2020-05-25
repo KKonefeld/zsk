@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <h1>Twoje ruchy: <span id="ruchy"></span></h1>
+    <div class="w3-container w3-center" id="xd">
+
+    </div>
+
+<div class="reset">
+  <input type="button" name="" value="Resetuj" onclick="resetuj()">
+</div>
+<script type="text/javascript">
+  function resetuj() {
+location.reload();
+  }
+
+
+  var x = location.search;
+  var x = x.substring(1,2);
+  // generowanie planszy
+  var ktorakarta=1;
+  for (var j = 0; j < x; j++)
+  {
+
+    for (var i = 0; i < x; i++)
+    {
+
+      document.getElementById('xd').innerHTML +=
+        "<div class=statyczne> <div class=karta id=numer"+ktorakarta+" onclick=pokazkarte("+ktorakarta+")>"+
+
+        "</div></div>";
+        ktorakarta++;
+    }
+    document.getElementById('xd').innerHTML += "<div class=rzad> </div>";
+
+  }
+
+var karty = ["malik/malik.png" , "malik/malik.png", "malik/malik2.jpg", "malik/malik2.jpg",
+"malik/malik3.jpg", "malik/malik3.jpg", "malik/malik4.jpg", "malik/malik4.jpg",
+"malik/malik5.jpg", "malik/malik5.jpg", "malik/malik6.jpg", "malik/malik6.jpg",
+"malik/malik7.jpg", "malik/malik7.jpg", "malik/malik8.jpg", "malik/malik8.jpg"
+];
+var karty6 =["malik/malik.png" , "malik/malik.png", "malik/malik2.jpg", "malik/malik2.jpg",
+"malik/malik3.jpg", "malik/malik3.jpg", "malik/malik4.jpg", "malik/malik4.jpg",
+"malik/malik5.jpg", "malik/malik5.jpg", "malik/malik6.jpg", "malik/malik6.jpg",
+"malik/malik7.jpg", "malik/malik7.jpg", "malik/malik8.jpg", "malik/malik8.jpg",
+"malik/malik9.jpg", "malik/malik9.jpg", "malik/malik10.jpg", "malik/malik10.jpg",
+"malik/malik11.jpeg", "malik/malik11.jpeg", "malik/malik12.jpg", "malik/malik12.jpg",
+"malik/malik13.jpg","malik/malik13.jpg","malik/malik14.jpg","malik/malik14.jpg",
+"malik/malik15.jpg","malik/malik15.jpg","malik/malik16.jpg","malik/malik16.jpg",
+"malik/malik17.jpg","malik/malik17.jpg","malik/malik18.jpg","malik/malik18.jpg",
+
+
+];
+
+function shuffle(array) {
+  array.sort(() => Math.random() - 0.5);
+}
+if (x==6) {
+  karty = karty6;
+}
+shuffle(karty);
+var licznik_ruchów = 1;
+var pozostale = 8;
+
+var pierwsza_karta = false;
+var nazwa_pierwszej;
+var numer_pierwszej;
+function pokazkarte(numer){
+  document.getElementById('numer'+numer).style.backgroundImage = "url("+karty[numer-1]+")";
+   document.getElementById('numer'+numer).classList.add("odkryta");
+   if (!pierwsza_karta) {
+     pierwsza_karta = true;
+     nazwa_pierwszej = karty[numer-1];
+     numer_pierwszej = numer;
+  // /   licznik_ruchów++;
+   }else {
+     licznik_ruchów++;
+     if(karty[numer-1] == nazwa_pierwszej)
+     {
+         setTimeout(function() {
+
+       document.getElementById('numer'+numer_pierwszej).remove();
+       document.getElementById('numer'+numer).remove();
+       pozostale--;
+       pierwsza_karta = false;
+       nazwa_pierwszej = null;
+       numer_pierwszej = null;
+
+     }, 500);
+         document.getElementById('ruchy').innerHTML = licznik_ruchów;
+     }else {
+      setTimeout(function() {
+
+
+        document.getElementById('numer'+numer_pierwszej).style.backgroundImage = "url(malik/tijara.jpg)";
+        document.getElementById('numer'+numer).style.backgroundImage = "url(malik/tijara.jpg)";
+        document.getElementById('numer'+numer_pierwszej).classList.remove("odkryta");
+        document.getElementById('numer'+numer).classList.remove("odkryta");
+        pierwsza_karta = false;
+        nazwa_pierwszej = null;
+        numer_pierwszej = null;
+        document.getElementById('ruchy').innerHTML = licznik_ruchów;
+      }, 500);
+
+     }
+
+   }
+console.log(pozostale);
+
+if (pozostale == 1) {
+//  alert("win");
+    document.getElementById('xd').innerHTML = " <i class=fa fa-spinner w3-spin w3-red style=font-size:64px>Wygrales</i>";
+
+
+}
+}
+
+
+
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .duze{
+         text-transform: uppercase;
+      }
+      .male{
+         text-transform: lowercase;
+      }
+    </style>
+
+  </head>
+  <body>
+
+      <textarea id="tekst" rows="8" cols="80" onmouseout="pobierz()"></textarea>
+      <input type="button" name=""  onclick="male()" value="zmien">
+      <p id="male"></p>
+      <p id="duze"></p>
+
+<script type="text/javascript">
+function pobierz() {
+  var napis = document.getElementById("tekst").value;
+  var napisma = napis.toLowerCase();
+  var napisdu =  napis.toUpperCase();
+
+  document.getElementById('male').innerHTML += napisma;
+  document.getElementById('duze').innerHTML += napisdu;
+  document.getElementById("tekst").disabled = true;
+}
+function male() {
+  document.getElementById('male').classList.toggle("duze");
+  document.getElementById('duze').classList.toggle("male");
+}
+</script>
+  </body>
+</html>

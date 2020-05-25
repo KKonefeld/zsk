@@ -1,0 +1,8 @@
+Po zaimportowaniu bazy (projekt.sql) (znajdujacy sie pod plikiem .txt), oraz zalogowaniu sie na konto administratora 
+za pomoc¹
+
+admin@admin.pl
+admin123
+mozemy przejsc do panelu administratora
+klikaj¹c (A) obok nazwy u¿ytkownika w prawym górnym rogu
+Z panelu mamy dostêp do wszystkich mo¿liwoœci.
